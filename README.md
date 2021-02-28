@@ -1,5 +1,7 @@
 # Convert Windows DHCP to Cisco CLI
 
+------
+
 ## Version 1.0.0
 
 ### Justin S. Cooksey  - 2021-02-28
@@ -20,6 +22,7 @@ Convert-WindowsDHCPToCisco
 ## DHCP Options Documentation
 
 [Wikipedia DHCP Options table](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol#Client_configuration_parameters)
+
 [Actual RFC2312](https://tools.ietf.org/html/rfc2132)
 
 ## Currently handles DHCP Options
