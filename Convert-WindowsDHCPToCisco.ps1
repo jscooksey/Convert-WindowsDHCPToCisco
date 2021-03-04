@@ -1,10 +1,3 @@
-#
-# Convert-WindowsDHCPToCisco
-#
-# Version 1.0.0
-#    Justin S. Cooksey  2021-02-28
-#
-
 #                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 # Convert an exclusion range from MSDHCP XML to Cisco CLI code
 #
@@ -112,12 +105,12 @@ function Convert-Reservations {
 
 
 #
-# Priomary code to read XML file and output Cisco CLI code
+# Primary code to read XML file and output Cisco CLI code
 #
 
 $OldServer = Read-Host 'Enter the computer name of the DHCP server to export from: '
 $xmlFile = $env:TEMP + "\DHCPExport.xml"
-Export-DhcpServer -ComputerName $OldServer -File $exportFile
+Export-DhcpServer -ComputerName $OldServer -File $xmlFile
 
 [XML]$fullDHCP = Get-Content $xmlFile
 $allScopes = $fullDHCP.DHCPServer.IPv4.Scopes.Scope

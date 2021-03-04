@@ -1,0 +1,25 @@
+$array =@('0x10', '0x0A', '0x0A', '0xC0', '0xA8', '0xA9', '0xE7', '0x1C', '0xCB', '0x1C',
+          '0x1C', '0x00', '0xC0', '0xA8', '0xA9', '0xF5', '0x18', '0xC0', '0xA8', '0x00',
+          '0xC0', '0xA8', '0xA9', '0xE7')
+
+ 
+# $array = @('0x10','0xc0','0xa8', '0xc0', '0xa8', '0x6e', '0x01','0x08', '0x0a', '0xc0', '0xa8', '0xa8', '0x05')
+
+Write-Host $array
+
+$i = 0
+$result = ""
+
+foreach($strValue in $array) {
+    $result = $result + $strValue.Substring(2)
+    $i++
+    if( ($i % 2) -eq 0 ) { $result = $result + '.' }
+}
+
+$result = 'option 121 hex ' + $result
+Write-Host $result
+
+#
+# option 121 hex 10c0a8c0a86e01 080AC0A8A805
+# Written from Cisco as
+#  option 121 hex 10c0.a8c0.a86e.0108.0ac0.a8a8.05
